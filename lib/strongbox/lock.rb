@@ -28,7 +28,7 @@ module Strongbox
       unless @public_key
         raise StrongboxError.new("#{@instance.class} model does not have public key_file")
       end
-      if !plaintext.blank?
+      if !plaintext.nil?
         @size = plaintext.size # For validations
         # Using a blank password in OpenSSL::PKey::RSA.new prevents reading
         # the private key if the file is a key pair
